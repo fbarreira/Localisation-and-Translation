@@ -23,7 +23,7 @@ public class LocalisedDropdown : MonoBehaviour
 
 	void Start ()
 	{
-		SetOptionValues ();
+		UpdateDropdown ();
 	}
 
 	[System.Diagnostics.Conditional ("UNITY_EDITOR")]
@@ -50,7 +50,7 @@ public class LocalisedDropdown : MonoBehaviour
 
 	}
 
-	public void SetOptionValues ()
+	public void UpdateDropdown ()
 	{
 		if (m_TMPdropdown)
 			UpdateTMP ();
