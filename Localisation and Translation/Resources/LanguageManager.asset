@@ -100,3 +100,39 @@ MonoBehaviour:
     - language: Spanish
       translation: "Ejemplo de una traducci\xF3n tard\xEDa"
     untranslatable: 0
+  - key: option_cats
+    Translations:
+    - language: English
+      translation: Cats
+    - language: Portuguese
+      translation: Gatos
+    - language: Spanish
+      translation: Gatos
+    untranslatable: 0
+  - key: option_dogs
+    Translations:
+    - language: English
+      translation: Dogs
+    - language: Portuguese
+      translation: "C\xE3es"
+    - language: Spanish
+      translation: Perros
+    untranslatable: 0
+  - key: option_birds
+    Translations:
+    - language: English
+      translation: Birds
+    - language: Portuguese
+      translation: "P\xE1ssaros"
+    - language: Spanish
+      translation: Aves
+    untranslatable: 0
+  - key: option_label
+    Translations:
+    - language: English
+      translation: Animals
+    - language: Portuguese
+      translation: Animais
+    - language: Spanish
+      translation: Animales
+    untranslatable: 0

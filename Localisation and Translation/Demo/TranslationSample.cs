@@ -7,6 +7,8 @@ public class TranslationSample : MonoBehaviour
 
 	public GameObject window;
 
+	public Dropdown dropdown;
+
 	GUITranslator guiTranslator;
 
 	void Start ()
@@ -27,7 +29,11 @@ public class TranslationSample : MonoBehaviour
 		guiTranslator.UpdateGUI (code);
 
 		//Manually updates expecific texts on the scene
-		UIDisplayUpdate ();
+		if (displayCurrentLanguage != null)
+			UIDisplayUpdate ();
+
+		if (dropdown != null)
+			UpdateDropdown ();
 	}
 
 	//Displays a window during the game
@@ -37,6 +43,17 @@ public class TranslationSample : MonoBehaviour
 		window.gameObject.SetActive (true);
 		//updates GUI for the new window
 		guiTranslator.UpdateGUI ();
+	}
+
+	public void ButtonWindowClose ()
+	{
+		//closes the window
+		window.gameObject.SetActive (false);
+	}
+
+	private void UpdateDropdown ()
+	{
+		dropdown.GetComponent<LocalisedDropdown> ().SetOptionValues ();
 	}
 
 	private void UIDisplayUpdate ()

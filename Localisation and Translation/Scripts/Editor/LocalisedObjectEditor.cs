@@ -82,6 +82,18 @@ namespace LocalisationAndTranslation
 			Undo.RegisterCreatedObjectUndo (localisedObject.gameObject, "Created a localised audio source.");
 		}
 
+		[MenuItem ("Tools/Localisation/Localised Dropdown", false, 154)]
+		public static void AddLocalisedDropdown ()
+		{
+			LocalisedDropdown localisedObject = new GameObject ("Localised Dropdown").AddComponent<LocalisedDropdown> ();
+			Selection.activeGameObject = localisedObject.gameObject;
+
+			AddToCanvas (localisedObject.transform);
+
+			localisedObject.gameObject.AddComponent<Dropdown> ();
+			Undo.RegisterCreatedObjectUndo (localisedObject.gameObject, "Created a localised dropdown.");
+		}
+
 		private static void AddToCanvas (Transform LocalisedObjectTransform)
 		{
 			Canvas canvas = Object.FindObjectOfType<Canvas> ();
