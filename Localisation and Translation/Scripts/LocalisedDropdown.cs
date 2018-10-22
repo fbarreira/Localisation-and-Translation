@@ -21,7 +21,7 @@ public class LocalisedDropdown : MonoBehaviour
 
 	void Start ()
 	{
-		SetOptionValues ();
+		UpdateDropdown ();
 	}
 
 	void Update ()
@@ -29,7 +29,7 @@ public class LocalisedDropdown : MonoBehaviour
 
 	}
 
-	public void SetOptionValues ()
+	public void UpdateDropdown ()
 	{
 		CheckOptionList ();
 
