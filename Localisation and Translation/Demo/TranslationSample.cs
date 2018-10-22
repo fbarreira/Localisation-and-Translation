@@ -32,8 +32,9 @@ public class TranslationSample : MonoBehaviour
 		if (displayCurrentLanguage != null)
 			UIDisplayUpdate ();
 
+		//Manually updates dropdown
 		if (dropdown != null)
-			UpdateDropdown ();
+			dropdown.GetComponent<LocalisedDropdown> ().UpdateDropdown ();
 	}
 
 	//Displays a window during the game
@@ -49,11 +50,6 @@ public class TranslationSample : MonoBehaviour
 	{
 		//closes the window
 		window.gameObject.SetActive (false);
-	}
-
-	private void UpdateDropdown ()
-	{
-		dropdown.GetComponent<LocalisedDropdown> ().SetOptionValues ();
 	}
 
 	private void UIDisplayUpdate ()
