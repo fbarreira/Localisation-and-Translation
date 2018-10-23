@@ -7,8 +7,6 @@ public class TranslationSample : MonoBehaviour
 
 	public GameObject window;
 
-	public LocalisedDropdown dropdown;
-
 	GUITranslator guiTranslator;
 
 	void Start ()
@@ -31,10 +29,6 @@ public class TranslationSample : MonoBehaviour
 		//Manually updates expecific texts on the scene
 		if (displayCurrentLanguage != null)
 			UIDisplayUpdate ();
-
-		//Manually update dropdown
-		if (dropdown != null)
-			dropdown.UpdateDropdown ();
 	}
 
 	//Displays a window during the game
