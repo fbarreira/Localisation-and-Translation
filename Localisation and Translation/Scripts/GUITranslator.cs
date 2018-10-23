@@ -14,13 +14,33 @@ public class GUITranslator : MonoBehaviour
 	public LanguageManager languageManager;
 	public LocalisationManager localisationManager;
 
-	public static GUITranslator Instance;
+	public delegate void HandleOnGUIupdate ();
+
+	public static event HandleOnGUIupdate OnGUIupdate;
+
+	protected static GUITranslator instance;
+
+	public static GUITranslator Instance
+	{
+		get
+		{
+			if (instance != null)
+				return instance;
+
+			instance = FindObjectOfType<GUITranslator> ();
+
+			if (instance != null)
+				return instance;
+
+			return instance;
+		}
+	}
 
 	void Awake ()
 	{
 		if (Instance == null)
 		{
-			Instance = this;
+			instance = this;
 		}
 		else if (Instance != this)
 		{
@@ -102,6 +122,9 @@ public class GUITranslator : MonoBehaviour
 	{
 		if (!CheckAssets ())
 			return;
+
+		if (OnGUIupdate != null)
+			OnGUIupdate.Invoke ();
 
 		foreach (ILocalisedObject localisedObject in localisedObjectsInScene)
 		{

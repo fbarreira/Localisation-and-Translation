@@ -21,7 +21,19 @@ public class LocalisedDropdown : MonoBehaviour
 
 	void Start ()
 	{
+		if (GUITranslator.Instance == null)
+		{
+			Debug.LogWarning ("No GUITranslator detected on scene, be sure to add one before calling it.");
+		}
+
+		GUITranslator.OnGUIupdate += UpdateDropdown;
+
 		UpdateDropdown ();
+	}
+
+	private void OnDestroy ()
+	{
+		GUITranslator.OnGUIupdate -= UpdateDropdown;
 	}
 
 	void Update ()
