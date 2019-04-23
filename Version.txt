@@ -1,0 +1,14 @@
+1.3.2
+Updated documentation
+
+1.3
+Added Support for translating dropdowns.
+
+1.2
+Fixed updating GUI for disabled objects.
+
+1.1
+Added support for newline commands ('\n').
+
+1.0
+Released.
